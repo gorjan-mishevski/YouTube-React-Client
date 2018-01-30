@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
-import './App.css'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import ReactPlayer from 'react-player'
 
 class App extends Component {
   constructor() {
@@ -33,12 +32,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header className="mt-4">
+          <h1 className="text-center">Welcome to YouTube React Client</h1>
         </header>
 
-        <div className="flex content-start flex-wrap h-48 justify-center">
+        <div className="flex content-start flex-wrap justify-center">
           <div className="text-center w-full mt-4">
             <div className="flex items-center justify-center">
               <FontAwesomeIcon icon="search" className="mr-1" />
@@ -51,9 +49,20 @@ class App extends Component {
           </div>
         </div>
 
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload. {this.state.response}
-        </p>
+        <div className="mt-8 player-wrapper">
+          <ReactPlayer
+            url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+            width='100%'
+            height='100%'
+            className="react-player"
+          />
+        </div>
+
+        <div className="border-solid mt-8 border-grey-light border p-4">
+          <p className="font-sans">Video Title</p>
+          <p className="font-sans mt-6">Video Description</p>
+        </div>
+
       </div>
     )
   }
